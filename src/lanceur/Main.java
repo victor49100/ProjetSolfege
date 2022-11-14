@@ -17,6 +17,10 @@ public class Main {
     public static void main(String[] args) {
         VuePrincipale vuePrinc = new VuePrincipale();
         ControlleurVuePrincipale CtrlVuePinc = new ControlleurVuePrincipale(vuePrinc);
+        
+        VueProgressionAccord VueAccord = new VueProgressionAccord();
+        ControlleurVueProgressionAccord CtrlAccord = new ControlleurVueProgressionAccord(VueAccord);
+        
         vuePrinc.setVisible(true);
     }
     

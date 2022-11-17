@@ -39,4 +39,8 @@ public class ControlleurPrincipal {
         this.CtrlAccord.getVue().setVisible(false);
         this.ctrlVuePrinc.getVue().setVisible(true);
     }
+    
+    public void remplirBox(){
+        this.CtrlAccord.remplirJcomboBox();
+    }
 }

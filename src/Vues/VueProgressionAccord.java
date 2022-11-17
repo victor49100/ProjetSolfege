@@ -5,6 +5,7 @@
 package Vues;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -30,6 +31,7 @@ public class VueProgressionAccord extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         ButtonRetour = new javax.swing.JButton();
+        jComboListRoot = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,6 +45,8 @@ public class VueProgressionAccord extends javax.swing.JFrame {
             }
         });
 
+        jComboListRoot.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -52,8 +56,13 @@ public class VueProgressionAccord extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(88, 88, 88))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ButtonRetour)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ButtonRetour))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jComboListRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -61,7 +70,9 @@ public class VueProgressionAccord extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jComboListRoot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addComponent(ButtonRetour)
                 .addContainerGap())
         );
@@ -75,6 +86,10 @@ public class VueProgressionAccord extends javax.swing.JFrame {
 
     public JButton getButtonRetour() {
         return ButtonRetour;
+    }
+
+    public JComboBox<String> getjComboListRoot() {
+        return jComboListRoot;
     }
 
     /**
@@ -108,12 +123,15 @@ public class VueProgressionAccord extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VueProgressionAccord().setVisible(true);
+                
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonRetour;
+    private javax.swing.JComboBox<String> jComboListRoot;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

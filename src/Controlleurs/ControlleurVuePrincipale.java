@@ -80,6 +80,7 @@ public class ControlleurVuePrincipale implements WindowListener, ActionListener 
         if (e.getSource() == vueMain.getButtonProgAccords()){
             System.out.println("Progression d'accords");
             ctrlP.afficheAccordProgresifs();
+            ctrlP.remplirBox();
         }
         if (e.getSource() == vueMain.getButtonListeAccords()){
             System.out.println("Listes d'accords");

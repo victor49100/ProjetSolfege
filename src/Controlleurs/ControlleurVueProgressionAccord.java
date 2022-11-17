@@ -23,9 +23,17 @@ public class ControlleurVueProgressionAccord implements WindowListener, ActionLi
         this.vue = vue;
         this.vue.addWindowListener(this);
         this.vue.getButtonRetour().addActionListener(this);
+        this.vue.getjComboListRoot().addActionListener(this);
+    }
+    //remplir la combo box
+    public void remplirJcomboBox(){
+        String[] ListeNote = {"do","re","mi","fa","sol","la","si"};
+        for (String uneNote: ListeNote){
+        this.vue.getjComboListRoot().addItem(uneNote);
+    }
         
     }
-
+    
     public VueProgressionAccord getVue() {
         return vue;
     }

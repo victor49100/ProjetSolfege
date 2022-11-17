@@ -15,11 +15,16 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        ControlleurPrincipal CrtlP = new ControlleurPrincipal();
+        
         VuePrincipale vuePrinc = new VuePrincipale();
-        ControlleurVuePrincipale CtrlVuePinc = new ControlleurVuePrincipale(vuePrinc);
+        ControlleurVuePrincipale CtrlVuePinc = new ControlleurVuePrincipale(vuePrinc,CrtlP);
         
         VueProgressionAccord VueAccord = new VueProgressionAccord();
-        ControlleurVueProgressionAccord CtrlAccord = new ControlleurVueProgressionAccord(VueAccord);
+        ControlleurVueProgressionAccord CtrlAccord = new ControlleurVueProgressionAccord(VueAccord,CrtlP);
+        
+        CrtlP.setCtrlAccord(CtrlAccord);
+        CrtlP.setCtrlVuePrinc(CtrlVuePinc);
         
         vuePrinc.setVisible(true);
     }

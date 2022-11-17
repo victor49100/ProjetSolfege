@@ -17,15 +17,26 @@ import javax.swing.JOptionPane;
  */
 public class ControlleurVuePrincipale implements WindowListener, ActionListener {
 
-    private VuePrincipale vue;
+    private VuePrincipale vueMain;
+    private ControlleurPrincipal ctrlP;
 
-    public ControlleurVuePrincipale(VuePrincipale vue) {
-        this.vue = vue;
-        // le contrôleur écoute la vue
-        this.vue.addWindowListener(this);
-        this.vue.getButtonProgAccords().addActionListener(this);
-        this.vue.getButtonListeAccords().addActionListener(this);
+    public ControlleurVuePrincipale(VuePrincipale vue,ControlleurPrincipal ctrlP) {
+        this.vueMain = vue;
+        this.ctrlP = ctrlP;
         
+        // le contrôleur écoute la vue
+        this.vueMain.addWindowListener(this);
+        this.vueMain.getButtonProgAccords().addActionListener(this);
+        this.vueMain.getButtonListeAccords().addActionListener(this);
+        
+    }
+
+    public VuePrincipale getVue() {
+        return vueMain;
+    }
+
+    public void setVue(VuePrincipale vue) {
+        this.vueMain= vue;
     }
 
     @Override
@@ -66,10 +77,11 @@ public class ControlleurVuePrincipale implements WindowListener, ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        if (e.getSource() == vue.getButtonProgAccords()){
+        if (e.getSource() == vueMain.getButtonProgAccords()){
             System.out.println("Progression d'accords");
+            ctrlP.afficheAccordProgresifs();
         }
-        if (e.getSource() == vue.getButtonListeAccords()){
+        if (e.getSource() == vueMain.getButtonListeAccords()){
             System.out.println("Listes d'accords");
         }
 

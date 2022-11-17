@@ -4,6 +4,8 @@
  */
 package Vues;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Victor
@@ -27,11 +29,19 @@ public class VueProgressionAccord extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        ButtonRetour = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Progression d'accord");
+
+        ButtonRetour.setText("Retour");
+        ButtonRetour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRetourActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -41,17 +51,31 @@ public class VueProgressionAccord extends javax.swing.JFrame {
                 .addContainerGap(91, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(88, 88, 88))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ButtonRetour)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                .addComponent(ButtonRetour)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRetourActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonRetourActionPerformed
+
+    public JButton getButtonRetour() {
+        return ButtonRetour;
+    }
 
     /**
      * @param args the command line arguments
@@ -89,6 +113,7 @@ public class VueProgressionAccord extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonRetour;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

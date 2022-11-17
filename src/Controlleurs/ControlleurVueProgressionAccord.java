@@ -14,12 +14,24 @@ import Vues.VueProgressionAccord;
  * @author Victor
  */
 public class ControlleurVueProgressionAccord implements WindowListener, ActionListener {
+    private ControlleurPrincipal ctrlP;
     private VueProgressionAccord vue;
     
-    public ControlleurVueProgressionAccord(VueProgressionAccord vue){
+    
+    public ControlleurVueProgressionAccord(VueProgressionAccord vue,ControlleurPrincipal ctrlP){
+        this.ctrlP = ctrlP;
         this.vue = vue;
         this.vue.addWindowListener(this);
+        this.vue.getButtonRetour().addActionListener(this);
         
+    }
+
+    public VueProgressionAccord getVue() {
+        return vue;
+    }
+
+    public void setVue(VueProgressionAccord vue) {
+        this.vue = vue;
     }
 
     @Override
@@ -59,6 +71,11 @@ public class ControlleurVueProgressionAccord implements WindowListener, ActionLi
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        if (e.getSource() == vue.getButtonRetour()){
+            System.out.println("retour");
+            ctrlP.retourPrinciaple();
+        }
         
     }
     

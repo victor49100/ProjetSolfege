@@ -9,9 +9,9 @@ package Controlleurs;
  * @author Victor
  */
 public class ControlleurPrincipal {
-    private ControlleurVuePrincipale ctrlVuePrinc = null;
-    private ControlleurVueProgressionAccord CtrlAccord = null;
-    
+    private ControlleurVuePrincipale ctrlVuePrinc;
+    private ControlleurVueProgressionAccord CtrlAccord;
+
     // acceuseur mutateur 
 
     public ControlleurVuePrincipale getCtrlVuePrinc() {
@@ -30,5 +30,13 @@ public class ControlleurPrincipal {
         this.CtrlAccord = CtrlAccord;
     }
     
+    public void afficheAccordProgresifs (){
+        this.ctrlVuePrinc.getVue().setVisible(false);
+        this.CtrlAccord.getVue().setVisible(true);
+    }
     
+    public void retourPrinciaple (){
+        this.CtrlAccord.getVue().setVisible(false);
+        this.ctrlVuePrinc.getVue().setVisible(true);
+    }
 }

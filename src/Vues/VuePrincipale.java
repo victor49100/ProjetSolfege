@@ -81,7 +81,8 @@ public class VuePrincipale extends javax.swing.JFrame {
     public JButton getButtonProgAccords() {
         return buttonProgAccords;
     }
-
+    
+    
     
     /**
      * @param args the command line arguments
